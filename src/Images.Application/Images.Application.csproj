@@ -1,0 +1,45 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <RootNamespace>Images.Application</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Common\" />
+    <None Remove="Common\Interfaces\" />
+    <None Remove="Features\" />
+    <None Remove="Features\Images\" />
+    <None Remove="Features\Images\Commands\" />
+    <None Remove="Features\Images\Queries\" />
+    <None Remove="Common\Mappings\" />
+    <None Remove="Features\Authentication\" />
+    <None Remove="Common\Models\" />
+    <None Remove="Features\Authentication\Commands\AuthUserCommand\" />
+    <None Remove="Features\Authentication\Commands\CreateUserCommand\" />
+    <None Remove="Features\UserManagement\" />
+    <None Remove="Features\UserManagement\Queries\" />
+    <None Remove="Features\Authentication\Commands\GoogleAuthUserCommand\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Common\Mappings\" />
+    <Folder Include="Common\Models\" />
+    <Folder Include="Features\Authentication\Commands\AuthUserCommand\" />
+    <Folder Include="Features\Authentication\Commands\CreateUserCommand\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.7.1" />
+    <PackageReference Include="MediatR" Version="12.1.1" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
+    <PackageReference Include="Ardalis.GuardClauses" Version="4.1.1" />
+    <PackageReference Include="Google.Apis.Auth" Version="1.62.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Http.Features" Version="6.0.0-preview.4.21253.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="8.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Images.Domain\Images.Domain.csproj" />
+  </ItemGroup>
+</Project>

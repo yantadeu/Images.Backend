@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  db1:
+    image: postgres:latest
+    container_name: db1
+    hostname: db1
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: Upik@123
+    networks:
+      - upik_net
+    ports:
+      - "5432:5432"
+  
+networks:
+  upik_net:
+    external: true
