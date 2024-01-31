@@ -19,7 +19,6 @@ public class ApplicationDbContext : IdentityDbContext<ApplicationUser>, IApplica
     }
     public DbSet<Image> Images { get; set; }
     public DbSet<ApplicationUser> ApplicationUsers { get; set; }
-    public DbSet<Like> Likes { get; set; }
 
     private IConfiguration _configuration;
 
@@ -136,7 +135,8 @@ public class ApplicationDbContext : IdentityDbContext<ApplicationUser>, IApplica
     }
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        var connectionString = _configuration.GetConnectionString("DefaultConnection");
+        var connectionString = _configuration.GetConnectionString("DefaultConnection") ??
+                               "Server=localhost;Port=5432;Database=postgres;Username=postgres;Password=Upik@123";
 
         optionsBuilder.UseNpgsql(connectionString);
     }

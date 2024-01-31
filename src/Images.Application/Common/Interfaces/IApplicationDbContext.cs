@@ -7,7 +7,6 @@ public interface IApplicationDbContext
 {
     DbSet<Image> Images { get; set; }
     DbSet<ApplicationUser> ApplicationUsers { get; set; }
-    DbSet<Like> Likes { get; set; }
 
     Task<int> SaveChangesAsync(CancellationToken cancellationToken);
 }
