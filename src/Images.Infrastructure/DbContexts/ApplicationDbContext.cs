@@ -9,6 +9,9 @@ namespace Images.Infrastructure.DbContexts;
 
 public class ApplicationDbContext : IdentityDbContext<ApplicationUser>, IApplicationDbContext
 {
+    public ApplicationDbContext()
+    {
+    }
     public ApplicationDbContext(IConfiguration configuration)
     {
         _configuration = configuration;
@@ -67,65 +70,64 @@ public class ApplicationDbContext : IdentityDbContext<ApplicationUser>, IApplica
             }
         );
         
-
         modelBuilder.Entity<Image>().HasData(
             new Image
             {
-                Id = Guid.NewGuid(), Title = "Image 1",
+                Id = Guid.Parse("1b7b6d51-4006-447d-b5b6-fffd4f800e55"), Title = "Image 1",
                 Content = GetImageAsByteArrayAsync("https://placehold.co/100/png").Result, ContentType = "image/png",
                 OwnerId = userId.ToString()
             },
             new Image
             {
-                Id = Guid.NewGuid(), Title = "Image 2",
+                Id = Guid.Parse("2cbf533f-0055-42ea-b788-ff8207ce7a16"), Title = "Image 2",
                 Content = GetImageAsByteArrayAsync("https://placehold.co/200/png").Result, ContentType = "image/png",
                 OwnerId = userId.ToString()
             },
             new Image
             {
-                Id = Guid.NewGuid(), Title = "Image 3",
+                Id = Guid.Parse("42368e89-cc74-4766-86a3-abb4fb522aee"), Title = "Image 3",
                 Content = GetImageAsByteArrayAsync("https://placehold.co/300/png").Result, ContentType = "image/png",
                 OwnerId = userId.ToString()
             },
             new Image
             {
-                Id = Guid.NewGuid(), Title = "Image 4",
+                Id = Guid.Parse("6325c87b-45cb-4571-9ebc-26a0a64c85be"), Title = "Image 4",
                 Content = GetImageAsByteArrayAsync("https://placehold.co/400/png").Result, ContentType = "image/png",
                 OwnerId = userId.ToString()
             },
             new Image
             {
-                Id = Guid.NewGuid(), Title = "Image 5",
+                Id = Guid.Parse("68ac7138-b5a7-4e5e-a4ee-e2210d60da6b"), Title = "Image 5",
                 Content = GetImageAsByteArrayAsync("https://placehold.co/500/png").Result, ContentType = "image/png",
                 OwnerId = userId.ToString()
             },
             new Image
             {
-                Id = Guid.NewGuid(), Title = "Image 6",
+                Id = Guid.Parse("746ca9da-92cd-44c6-9f35-964645173a18"), Title = "Image 6",
                 Content = GetImageAsByteArrayAsync("https://placehold.co/600/png").Result, ContentType = "image/png",
                 OwnerId = userId.ToString()
             },
             new Image
             {
-                Id = Guid.NewGuid(), Title = "Image 7",
+                Id = Guid.Parse("90ec12f1-7779-415e-9e7b-5f70a3db10a4"), Title = "Image 7",
                 Content = GetImageAsByteArrayAsync("https://placehold.co/700/png").Result, ContentType = "image/png",
                 OwnerId = userId.ToString()
             },
             new Image
             {
-                Id = Guid.NewGuid(), Title = "Image 8",
+                Id = Guid.Parse("96d4bdd2-a0c8-4998-a14a-3d3ebf1f5c66"), Title = "Image 8",
                 Content = GetImageAsByteArrayAsync("https://placehold.co/800/png").Result, ContentType = "image/png",
                 OwnerId = userId.ToString()
             },
             new Image
             {
-                Id = Guid.NewGuid(), Title = "Image 9",
+                Id = Guid.Parse("d25405b3-fc30-4fd4-a8bb-cbbb4ef259f4"), Title = "Image 9",
                 Content = GetImageAsByteArrayAsync("https://placehold.co/900/png").Result, ContentType = "image/png",
                 OwnerId = userId.ToString()
             },
             new Image
             {
-                Id = Guid.NewGuid(), Title = "Image 10",
+                Id = Guid.Parse("fcc40f61-b7cd-4813-88c0-4d7f907a9b19"), Title = "Image 10",
                 Content = GetImageAsByteArrayAsync("https://placehold.co/1000/png").Result, ContentType = "image/png",
                 OwnerId = userId.ToString()
             }
